@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head lang="ja">
+  <meta charset="UTF-8">
+  <title></title>
+  <!-- <link rel="stylesheet" type="text/css" href="css/menu.css"> -->
+   <link href="{% static 'css/menu.css' %}" rel="stylesheet" type="text/css">
+    <div align="right">
+        userID: {{ user_id }}
+    </div>
+</head>
+<body>
+{% block body %}
+{% endblock %}
+</body>
+</html>

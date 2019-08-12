@@ -1,0 +1,31 @@
+{% extends "menu_base.html" %}
+
+{% block body %}
+
+
+    <h1> メニュー </h1>
+    <hr>
+
+<div align="center">
+    
+    ID: {{ user_id }} <br>
+    PASS: {{ password }}<br>
+    
+    <div>
+    <a href="{% url 'hello_memoEntry' %}">メモ</a><br>
+    </div>
+    
+    <div>
+    <a href="{% url 'hello_machineLearnEntry' %}">Machine Learning</a><br>
+    </div>
+    
+    <div>
+    <a href="{% url 'hello_subContent' %}">サブコンテンツ</a><br>
+    </div>
+
+    
+</div>
+    
+    
+
+{% endblock %}

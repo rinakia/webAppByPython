@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="ja">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{% block content %}
+Hello Template! <br>
+My HTML <br>
+String: {{str}}
+<p>
+{% for i in num %}
+{{ i }}<br>
+{% endfor %}
+</p>
+{% endblock %}
+    
+    <div>
+    <a href="{% url 'hello_link' %}">サンプルリンク</a><br>
+    </div>
+    
+    <div class="" id="">
+    <form action="" method="post">
+        <label>名前:<input type="text" size="20" name="name"></label>
+        <input type="submit" value="送信">
+    </form>
+    </div>  
+    
+<br><br><br>
+
+</body>
+</html>

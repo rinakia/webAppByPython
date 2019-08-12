@@ -1,0 +1,43 @@
+{% extends "menu_base.html" %}
+
+{% block body %}
+
+<!--
+<div class="cp_navi">
+<div id="cp_sidenav" class="sidenav">
+	<a href="#" id="home">Home</a>
+	<a href="#" id="news">News</a>
+	<a href="#" id="contact">Contact</a>
+	<a href="#" id="about">About</a>
+</div>
+</div>
+-->
+
+    <h1> メニュー </h1>
+    <hr>
+
+<div align="center">
+    
+    ID: {{ user_id }} <br>
+    PASS: {{ password }}<br>
+    
+    <br>
+    
+    <div>
+    <a href="{% url 'hello_insertAccountEntry' %}">アカウント登録</a><br>
+    </div>
+    
+    <div>
+    <a href="{% url 'hello_memoEntry' %}">メモ</a><br>
+    </div>
+    
+    <div>
+    <a href="{% url 'hello_subContent' %}">サブコンテンツ</a><br>
+    </div>
+
+    
+</div>
+    
+    
+
+{% endblock %}

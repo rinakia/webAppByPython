@@ -1,0 +1,46 @@
+{% extends "menu_base.html" %}
+{% load static %}
+{% block body %}
+<style>
+    canvas {
+        background-color: white;
+        border: solid 5px black;
+    } 
+</style>    
+<div align="center">
+<form name="js">
+    <h1 id="hello_text">Hello World</h1>
+    <script type="text/javascript" src="{% static 'js/canvas_req.js' %}"></script><br>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <script type="text/javascript" src="{% static 'js/canvas_rule.js' %}"></script><br>
+    お名前：<input type="text" name="txtb" value=""><br>
+    <!--  <input type="button" value="送信"> <br> -->
+    <input type="button" value="送信" onclick="req()"> 
+    <input type="button" value="消去" onclick="clr()"> <br> 
+    <div><img id="newImg" name="newImg"></div>  
+    
+    <script>
+        // var img1 = document.getElementById("newImg");
+        var check_img = document.getElementById("check_img");
+        document.write(check_img);
+        // if(document.getElementById("newImg")){
+        // if( img1){
+        /*
+            document.write('<div>imgあるよ</div>');
+            document.write(img1);
+            // document.write(document.getElementById("newImg"));
+        }else{
+            document.write('<div>imgないよ</div>');
+            document.write(img1);
+            //document.write(document.getElementById("newImg"));
+        }
+        */ 
+    </script>
+    
+    <br>{{ message }}<br><br>
+    
+    <br>{{ img }}<br><br>
+    
+</form>
+</div>
+{% endblock %}

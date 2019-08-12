@@ -1,0 +1,27 @@
+{% extends "menu_base.html" %}
+
+{% block body %}
+
+    <h1> メモ </h1>
+    <hr>
+
+<div align="center">
+    
+    <br>{{ message }}<br><br>
+    
+    <form action="{% url 'hello_memoExecute' %}" method="get">
+    
+    ファイル名: 
+    <input type="text" name="filename" size="30" maxlength="20"><br><br>
+    
+    <textarea name="memo" rows="30" cols="80"></textarea><br>
+        
+    <input type="submit" value="ログイン"><br>
+
+    </form>
+    
+</div>
+    
+    
+
+{% endblock %}
