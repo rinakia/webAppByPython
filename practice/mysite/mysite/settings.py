@@ -78,7 +78,6 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -96,6 +95,7 @@ DATABASES = {
         'PORT': '',
     }
 }
+"""
 
 # 19/08/02 追加
 # AUTH_USER_MODEL = 'users.User'
