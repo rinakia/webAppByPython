@@ -3,6 +3,7 @@ from django.http.response import HttpResponse
 from django.shortcuts import render # 19/07/25 追加
 from . import forms # 19/08/02 追加
 import datetime # 19/08/10 追加
+import os # 19/08/13 追加
 
 import base64 # 19/08/11 追加
 
@@ -74,11 +75,19 @@ def hello_memoEntry(request):
     return render(request, 'memo.html')
 
 def hello_memoExecute(request):
+    fileSumMax=100;
+    isfile = os.path.isfile
+    join = os.path.join
+    foldername = 'save/memo/'
+    number_of_files = sum(1 for item in os.listdir(foldername) if isfile(join(foldername, item)))
+    print(number_of_files)
     dt_now = datetime.datetime.now()
     date_str = str(dt_now.year%100).zfill(2)+str(dt_now.month).zfill(2)+str(dt_now.day).zfill(2)
-    filename = 'save/memo/' + request.GET.get("filename") + '_' + date_str +'.txt'
+    filename =  foldername + request.GET.get("filename") + '_' + date_str +'.txt'
     memo = request.GET.get("memo")
     try:
+        if number_of_files > fileSumMax:
+            raise FileOverError("File more than" + str(fileSumMax))
         file = open(filename, 'w')
         file.write(memo)
         file.close()
@@ -86,6 +95,11 @@ def hello_memoExecute(request):
     except IOError:
         d = {
         'message': '出力失敗',
+        }
+        return render(request, 'memo.html', d)
+    except FileOverError:
+        d = {
+        'message': 'ファイル数が'+ str(fileSumMax) + 'を超えています',
         }
         return render(request, 'memo.html', d)
     else:
