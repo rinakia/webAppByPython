@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/ec2-user/webAppByPython/practice/env"
+VIRTUAL_ENV="/Users/nari/Documents/webAppByPython/practice/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

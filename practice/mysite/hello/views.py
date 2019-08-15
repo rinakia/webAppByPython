@@ -122,12 +122,18 @@ def hello_handwritingRecogExecute(request):
         }
         return render(request, 'handwritingRecogEntry.html', d)
     else:
-        enc_data  = request.GET.get("canvas")
+        canvas  = request.GET.get("canvas")
         # dec_data = base64.b64decode( enc_data.split(',')[1] )
-        d = {
-            'img': enc_data,# 19/08/11 追加
-            'message': "",
-        }
+        if not canvas:
+            d = {
+                'img': "",# 19/08/11 追加
+                'message': "canvasの値が取れてないお",
+                }
+        else:
+            d = {
+                'img': canvas,# 19/08/11 追加
+                'message': "",
+                }
         return render(request, 'handwritingRecogEntry.html', d)
 
 def hello_subContentEntry(request):

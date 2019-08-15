@@ -69,3 +69,15 @@ function endDraw(){
 
     flgDraw = false;
 }
+
+
+// 画面クリア
+/* 
+function clr(){
+    var canvas = document.getElementById('canvas');
+    var con = canvas.getContext('2d');
+    // document.js.nameCanvas.value="";
+    con.clearRect(0, 0, canvas.width, canvas.height);
+  
+  }
+*/

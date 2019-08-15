@@ -49,12 +49,14 @@ function toBlob(base64){
 
 
 //テキストボックスの文字を操作する
+// ruleへ 19/08/14
+/*
 function clr(){
     var canvas = document.getElementById('canvas');
     var con = canvas.getContext('2d');
-
-    // document.js.txtb.value="";
+    // document.js.nameCanvas.value="";
     con.clearRect(0, 0, canvas.width, canvas.height);
   
   }
+*/
 

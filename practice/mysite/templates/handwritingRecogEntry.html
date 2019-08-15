@@ -7,22 +7,22 @@
         border: solid 5px black;
     } 
 </style>    
+<!-- <script type="text/javascript" src="{% static 'js/canvas_get.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'js/canvas_req.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/canvas_rule.js' %}"></script>
 <div align="center">
-<form action="{% url 'hello_handwritingRecogExecute' %}" method="get">
-    <form name="js">
-    <h1 id="hello_text">Hello World</h1>
-    <script type="text/javascript" src="{% static 'js/canvas_req.js' %}"></script><br>
-    <canvas id="canvas" name="canvas" width="300" height="300"></canvas>
-    <script type="text/javascript" src="{% static 'js/canvas_rule.js' %}"></script><br>
+<form action="{% url 'hello_handwritingRecogExecute' %}" method="get" name="js"id="form" >
+    <h1 id="hello_text">0〜9の数字を1つ書いてください</h1>
+    <canvas id="canvas" name="canvas" width="300" height="300"></canvas><br><br>
     お名前：<input type="text" name="nameCanvas" value=""><br>
-    <input type="button" value="作成" onclick="req()"> 
+    <!-- <input type="button" value="作成" onclick="req"> -->
+    <input type="submit" value="送信">
     <input type="button" value="消去" onclick="clr()"> <br> 
     <div><img id="newImg" name="newImg"></div>  
     
     <br>{{ message }}<br><br>
-    <input type="submit" value="送信">
     
-    </form>
+    
 </form>
 </div>
 {% endblock %}
