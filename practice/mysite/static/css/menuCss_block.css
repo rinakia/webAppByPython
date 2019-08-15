@@ -1,0 +1,98 @@
+/* 全体 */
+body{
+    background: #555555;
+}
+/* ヘッダー(メニュー) */
+.site-header{
+    background: rgba(255,255,255,0.8); /* 透過 */
+    display: flex;
+     /* margin: 10px 20px; */
+    /* padding: 0px 20px; */
+    /* margin: 20px; padding: 10px; */
+    position: fixed;
+    justify-content: space-between;
+    transition: .5s;
+    height: 13%;
+    width: 100%; 
+    align-items: center;
+}
+/* スクロール中 */
+.site-header.transform{
+    background: rgba(255,255,255,0.5);
+    /* margin: 10px; padding: 5px; */
+    /* padding: 0px 20px; */
+    height: 8%;
+
+}
+.active {
+	background-color: #da3c41;
+}
+/* logo */
+.site-logo img{
+    opacity:0.8;
+    height: 30px;
+    width: auto;
+}
+/* スクロール中 */
+.site-logo.transform{
+    opacity:0.5;
+    height: 30px;
+    width: auto;
+}
+.gnav__menu{
+    display: flex;
+}
+/* boxルール */
+.gnav__menu__item{
+    display: block;
+    padding: 0px 5px;
+    text-decoration: none;
+    color: #000000;
+    /* margin-left: 20px;*/
+    
+    align-items: center;
+    border-left: 1px solid #bbbbbb;
+}
+.gnav__menu__item a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    color: #333;
+    text-decoration: none;
+}
+/* active */
+.gnav__menu__item a.active{
+    background-color: #0F0;
+}
+.gnav__menu__item a:hover:not(.active){
+    background-color: #0F0;
+}
+/* トップ画像 */
+.hero{
+    max-height: 500px;
+    overflow: hidden;
+}
+.hero img{
+    height: auto;
+    width: 100%;
+}
+.content{
+    text-align: center;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding-top: 100px;
+    width: 800px;
+}
+.content p{
+    margin-bottom: 20px;
+}
+.site-footer{
+    background: #FFD5EC;
+    padding: 40px 0;
+}
+.copyright{
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
