@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hello', # 19/07/22 追加
     'users', # 19/08/02 追加
+    'machineLearn',  # 19/08/20 追加
 ]
 
 MIDDLEWARE = [

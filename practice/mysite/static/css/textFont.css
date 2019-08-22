@@ -1,0 +1,19 @@
+
+
+/* テキスト管理 */
+p {
+    color: black;
+}
+
+.color_white {
+    color: #FFFFFF;
+}
+
+.size1 {
+    font-size: 30px
+}
+
+.size4 {
+    font-size: 12px
+}
+

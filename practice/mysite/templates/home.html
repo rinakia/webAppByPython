@@ -1,17 +1,26 @@
-{% extends "menu_base.html" %}
+
+{% extends "home_base.html" %}
 
 {% block body %}
-    
 
-    <h1> メニュー </h1>
-    <hr>
+{% load static %}
+
+<div class="hero"><img src="{% static 'img/logo.png' %}" alt="hero"></div>
 
 <div align="center">
     
-    ID: {{ user_id }} <br>
-    PASS: {{ password }}<br>
+    <br>
+    <hr>
+    
+    <p class="color_white size1"> サイト管理者より </p>
+    
+    <p class="color_white size4">工事中。<br> 気が向けば変わる、かも。かも。</p>
     
     <br>
+    
+    <hr>
+    
+    <h1> 主なリンク </h1>
     
     <div>
     <a href="{% url 'hello_insertAccountEntry' %}">アカウント登録</a><br>

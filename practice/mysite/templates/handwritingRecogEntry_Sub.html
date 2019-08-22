@@ -1,0 +1,42 @@
+{% extends "menu_base.html" %}
+{% load static %}
+{% block body %}
+
+<div align="center">
+<form action="{% url 'hello_handwritingRecogExecute_Sub' %}" method="get" id="form" >
+    <h1>0〜9の数字を1つ選んでください</h1>
+    <h3>工事中: 本当はcanvas置いて書いてもらう形式にしたい〜〜</h3>
+    
+
+    <select name="num">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+    </select>
+    <input type="submit" value="送信">
+    <input type="button" value="消去" onclick="clr()"> <br> 
+    <div><img id="newImg" name="newImg"></div>  
+</form>
+    
+    
+    {% if img %}
+    <br>{{ message }}<br><br>    
+    
+    <br>{{ array.0 }}<br><br>    
+    
+    <form action="{% url 'hello_handwritingRecogExecute_Sub' %}" method="get" id="form" >
+        <img src= "{% static img %}"width="300"><br><br>
+        <input type="submit" value="認識">
+        <input type="button" value="変更" onclick=""> <br> 
+    </form>
+    {% endif %}
+    
+    <!-- <h1 class="minist"><img src= "img" alt="myMinist"></h1> -->
+    
+    
+
+</div>
+{% endblock %}
+
+
+

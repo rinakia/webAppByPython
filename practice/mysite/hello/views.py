@@ -15,7 +15,8 @@ def hello_world(request):
     return HttpResponse('Hello World!')
 
 def hello_entry(request):
-    return render(request, 'login.html')
+    # return render(request, 'login.html')
+    return render(request, 'home.html')
 
 def hello_template(request):
     # 値の受け渡し
@@ -112,7 +113,9 @@ def hello_machineLearnEntry(request):
     return render(request, 'machineLearnMenu.html')
 
 def hello_handwritingRecogEntry(request):
-    return render(request, 'handwritingRecogEntry.html')
+    # import 
+    # return render(request, 'handwritingRecogEntry.html')
+    return render(request, 'handwritingRecogEntry_Sub.html')
 
 def hello_handwritingRecogExecute(request):
     nameCanvas = request.GET.get("nameCanvas")
@@ -135,6 +138,18 @@ def hello_handwritingRecogExecute(request):
                 'message': "",
                 }
         return render(request, 'handwritingRecogEntry.html', d)
+    
+def hello_handwritingRecogExecute_Sub(request):
+    numSum = 3; # selectboxの数
+    
+    import random
+    rand = random.randint(1,10)
+    num = request.GET.get("num")
+    d = {
+                'array' : ["abc", "efg"],
+                'img' : "mlimg/digit_"+num+"_"+str(rand)+".png",
+            }
+    return render(request, 'handwritingRecogEntry_Sub.html', d)
 
 def hello_subContentEntry(request):
     return render(request, 'subContentMenu.html')
