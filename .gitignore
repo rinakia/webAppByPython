@@ -1,2 +1,5 @@
 *.jpg
 *.png
+*.txt
+/practice/save
+/practice/mysite/static/img
