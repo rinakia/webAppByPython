@@ -10,6 +10,8 @@ import base64 # 19/08/11 追加
 import sys
 sys.path.append("../users")
 from users.models import User # 19/08/05 追加
+from users.UserService import UserService as us # 19/08/05 追加
+
 
 def hello_world(request):
     return HttpResponse('Hello World!')
@@ -165,4 +167,53 @@ def hello_forms(request):
         'message': message,
     }
     return render(request, 'forms.html', d)
+
+
+#  ==============
+
+def users_loginEntry(request):
+    return render(request, 'usersApp/login.html')
+
+def users_loginExecute(request):
+    user_id = request.GET.get("user_id")
+    password = request.GET.get("password")
+    req = us.loginCheck(request, user_id, password)
+    if not hasattr(req, "session" ):
+        d = {
+        'message': req,
+        }
+        return render(request, 'usersApp/login.html', d)
+    else:
+        return render(req, 'usersApp/menu.html')
+
+def users_loginExecute_sub(request):
+    user_id = request.GET.get("user_id")
+    password = request.GET.get("password")
+    request.session['user_id'] = user_id
+    request.session['password'] = password
+    # del request.session['name']
+    if user_id == "user1" and password == "pass1" :
+        user = {
+            'user_id': user_id,
+            'password': password,
+        }
+        return render(request, 'usersApp/menu.html', user)
+
+def users_loginGuestExecute(request):
+    user = {
+        'user_id': "GUEST",
+        'password': "",
+    }
+    return render(request, 'usersApp/menu.html', user)
+
+def users_insertUserEntry(request):
+    user = {
+        'user_id': request.session['user_id'],
+        'password': "",
+    }
+    return render(request, 'usersApp/insertUserEntry.html',user)
+
+def users_insertUserExecute(request):
+    return render(request, 'usersApp/insertUserEntry.html')
+
 

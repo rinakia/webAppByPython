@@ -1,0 +1,23 @@
+
+{% extends "./usersMenuBase.html" %}
+
+{% block body %}
+
+
+  <h1>Userを登録する(users_user TABLE)</h1>
+  <h2>登録</h2>
+  <form action="{% url 'users_insertUserExecute' %}" method="get">
+    {{ form.errors.name }}
+    <label>{{ form.name.label }} {{ form.name }}</label><br>
+    <input type="submit" value="送信">
+    {% csrf_token %}
+  </form>
+
+
+  <hr>
+  <h2>一覧</h2>
+  {% for h in hello_user %}
+    {{ h.name }}<br>
+  {% endfor %}
+
+{% endblock %}

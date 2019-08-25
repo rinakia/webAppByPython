@@ -33,5 +33,4 @@ urlpatterns = [
 urlpatterns = [
     path(r'^admin/', admin.site.urls),
     path('', include('hello.urls')),
-    # path(r'^link/', include('hello.urls'),
 ]

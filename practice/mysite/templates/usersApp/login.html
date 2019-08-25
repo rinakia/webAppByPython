@@ -1,0 +1,48 @@
+{% extends "../home_base.html" %}
+
+{% block body %}
+
+<hr>
+
+    <h1>ログイン</h1>
+<hr>
+<div align="center">
+<br>{{ message }}<br><br>
+<table border="0">
+<form action="{% url 'users_loginExecute' %}" method="get">
+    <tr>
+        <th>
+            ユーザID
+        </th>
+        <td>
+            <input type="text" name="user_id" value="" size="24">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            パスワード
+        </th>
+        <td>
+            <input type="password" name="password" value="" size="24">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="ログイン">
+        </td>
+    </tr>
+</form>
+</table>
+</div>
+
+<hr>
+    
+ <br>
+    <div align="center">
+    <a href="{% url 'users_loginGuestExecute' %}">ゲストユーザとしてログイン</a><br>
+    </div>
+
+<br>
+    
+{% endblock %}
+

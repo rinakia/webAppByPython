@@ -39,5 +39,10 @@ urlpatterns = [
     path(r'^handwritingRecogEntry/$', views.hello_handwritingRecogEntry, name='hello_handwritingRecogEntry'), # 19/08/10 追加
     path(r'^handwritingRecogExecute/$', views.hello_handwritingRecogExecute_Sub, name='hello_handwritingRecogExecute_Sub'), # 19/08/10 追加
     path(r'^handwritingRecogExecute/$', views.hello_handwritingRecogExecute, name='hello_handwritingRecogExecute'), # 19/08/10 追加
+    path(r'^usersApp/loginEntry/$', views.users_loginEntry, name='users_loginEntry'), # 19/08/22 追加
+    path(r'^usersApp/loginExecute/$', views.users_loginExecute, name='users_loginExecute'), # 19/08/22 追加
+    path(r'^usersApp/loginGuestExecute/$', views.users_loginGuestExecute, name='users_loginGuestExecute'), # 19/08/22 追加
+    path(r'^usersApp/insertUserEntry/$', views.users_insertUserEntry, name='users_insertUserEntry'), # 19/08/22 追加
+    path(r'^usersApp/insertUserExecute/$', views.users_insertUserExecute, name='users_insertUserExecute'), # 19/08/22 追加
 ]
 

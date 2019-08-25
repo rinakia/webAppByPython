@@ -1,6 +1,7 @@
 /* 全体 */
 body{
     background: #444444;
+    color: #FFFFFF;
 }
 /* ヘッダー(メニュー) */
 .site-header{
@@ -67,6 +68,11 @@ body{
 .gnav__menu__item a.active{
     background-color: #0F0;
 }
+/* logout */
+.gnav__menu__item a.logout{
+    background-color: #00FFFF;
+}
+/*  active */
 .gnav__menu__item a:hover:not(.active){
     background-color: #0F0;
 }

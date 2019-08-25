@@ -1,11 +1,9 @@
 
-{% extends "home_base.html" %}
+{% extends "./usersMenuBase.html" %}
 
 {% block body %}
 
 {% load static %}
-
-<div class="hero"><img src="{% static 'img/home.JPG' %}" alt="hero"></div>
 
 <div align="center">
     
@@ -23,21 +21,8 @@
     <h1> 主なリンク </h1>
     
     <div>
-    <a href="{% url 'hello_insertAccountEntry' %}">アカウント登録</a><br>
+    <a href="{% url 'users_insertUserEntry' %}">ユーザ登録</a><br>
     </div>
-    
-    <div>
-    <a href="{% url 'hello_memoEntry' %}">メモ</a><br>
-    </div>
-    
-    <div>
-    <a href="{% url 'hello_subContent' %}">サブコンテンツ</a><br>
-    </div>
-    
-    <div>
-    <a href="{% url 'users_loginEntry' %}">ユーザ型アプリケーション</a><br>
-    </div>
-
     
     
     <hr>
