@@ -9,7 +9,8 @@ from users.UserDAO import UserDAO as dao
 from users.UserDTO import UserDTO as dto
 """
 
-from users.TransactionManagerByPostgres import TransactionManagerByPostgres as tm
+# from users.TransactionManagerByPostgres import TransactionManagerByPostgres as tm
+from users import TransactionManagerByPostgres as tmbp
 from users import UserDAO as dao
 from users.UserDTO import UserDTO as dto
 
@@ -20,6 +21,7 @@ class UserService:
     def makeAttrFromDTO(request, dto1:dto):
         user = {}
         if hasattr(userDTO, "_UserDTO__userNum" ):
+            print("num: ")
             request.session['user_num'] = userDTO.getNum()
             # user['user_num'] = userDTO.getNum()
         if hasattr(userDTO, "_UserDTO__userId" ):
@@ -45,11 +47,11 @@ class UserService:
         
     # ユーザログイン認証
     def loginCheck(request, userId, password):
-        # tm = tmbp.TransactionManagerByPostgres()
-        conn = tm.getConnection
+        tm = tmbp.TransactionManagerByPostgres()
+        conn = tm.getConnection()
         userDAO = dao.UserDAO(conn)
         userDTO = userDAO.getUserById(userId)
-        conn.close()
+        # conn.close()
         # id存在チェック
         if not hasattr(userDTO, "_UserDTO__userId" ):
             # print("存在しないユーザIDチェック id: " + userId)
@@ -64,6 +66,20 @@ class UserService:
             return messageE
         else:
             userDTO.setPass(None)
-            request = makeAttrFromDTO(request, userDTO)
+            # request = makeAttrFromDTO(request, userDTO)
+            if hasattr(userDTO, "_UserDTO__userNum" ):
+                request.session['user_num'] = userDTO.getNum()
+            if hasattr(userDTO, "_UserDTO__userId" ):
+                request.session['user_id'] = userDTO.getId()
+            if hasattr(userDTO, "_UserDTO__name" ):
+                request.session['user_name'] = userDTO.getName()
+            if hasattr(userDTO, "_UserDTO__password" ):
+                request.session['user_pass'] = userDTO.getPass()
+            if hasattr(userDTO, "_UserDTO__auth" ):
+                request.session['user_auth'] = userDTO.getAuth()
+            if hasattr(userDTO, "_UserDTO__gender" ):
+                request.session['user_gender'] = userDTO.getGender()
+            if hasattr(userDTO, "_UserDTO__mail" ):
+                request.session['user_mail'] = userDTO.getMail()
             return request
 

@@ -177,13 +177,22 @@ def users_loginEntry(request):
 def users_loginExecute(request):
     user_id = request.GET.get("user_id")
     password = request.GET.get("password")
+    if not user_id or not password:
+        if password:
+            d = {'message': "IDを入力してください",}
+        elif user_id:
+            d = {'message': "PASSWORDを入力してください",}
+        else:
+            d = {'message': "IDとPASSWORDを入力してください",}
+        return render(request, 'usersApp/login.html', d)
+    # ログインチェック
     req = us.loginCheck(request, user_id, password)
     if not hasattr(req, "session" ):
-        d = {
-        'message': req,
-        }
+        d = { 'message': req, }
+        print("render usersApp/login.html")
         return render(request, 'usersApp/login.html', d)
     else:
+        print("render usersApp/menu.html")
         return render(req, 'usersApp/menu.html')
 
 def users_loginExecute_sub(request):

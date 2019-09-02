@@ -4,8 +4,8 @@
 # 
 #   ----------------------------------
 """ 
-# from users import UserDTO as dto
-from users.UserDTO import UserDTO as dto
+from users import UserDTO as dto
+# from users.UserDTO import UserDTO as dto
 import datetime
 class UserDAO:
     
@@ -36,11 +36,16 @@ class UserDAO:
         
 
     def getUserById(self, userId:str) -> dto:
+        # userDTO = dto
         userDTO = dto.UserDTO()
         try:
             cur = self.conn.cursor()
             cur.execute("SELECT * FROM account WHERE id = %s;",(userId,))
-            userDTO.setAllByTuple(cur.fetchone())
+            # cur.execute("SELECT * FROM account WHERE id = 'user1';")
+            tuple1 = cur.fetchone()
+            print(tuple1)
+            userDTO.setAllByTuple(tuple1)
+            # print("dao: " + userDTO.getId())
             cur.close()
         except InterfaceError as e:
             print("InterfaceError")
