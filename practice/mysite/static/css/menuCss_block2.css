@@ -1,11 +1,11 @@
 /* 全体 */
 body{
-    background: #333333;
+    background: #000;
     color: #FFFFFF;
 }
 /* ヘッダー(メニュー) */
 .site-header{
-    background: #88FFFF; /* rgba(255,255,255,0.8); 透過 */
+    background: #67fbff; /* rgba(255,255,255,0.8); 透過 */
     display: flex;
      /* margin: 10px 20px; */
     /* padding: 0px 20px; */
@@ -19,7 +19,7 @@ body{
 }
 /* スクロール中 */
 .site-header.transform{
-    background:#88FFFF; /* rgba(255,255,255,0.5); */
+    background:#67fbff; /* rgba(255,255,255,0.5); */
     /* margin: 10px; padding: 5px; */
     /* padding: 0px 20px; */
     height: 8%;
@@ -118,3 +118,4 @@ body{
     font-size: 16px;
     text-align: center;
 }
+

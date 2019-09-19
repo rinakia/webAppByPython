@@ -1,0 +1,48 @@
+
+{% extends "../home_base.html" %}
+
+{% block body %}
+
+{% load static %}
+
+<div class="hero"><img src="{% static 'img/home.JPG' %}" alt="hero"></div>
+
+
+<div align="center">
+    
+    <br>
+    <hr>
+    
+    <p class="color_white size1"> サイト管理者より </p>
+    
+    <p class="color_white size4">VBS叩く用<br> 自動のvbsで操作</p>
+    
+    <br>
+    
+    <hr>
+    
+    <h1> 主なリンク </h1>
+    
+    <div>
+    <a href="{% url 'vbs_downloadEntry' %}">DOWNLOAD</a><br>
+    </div>
+    
+    <div>
+    <a href="{% url 'vbs_uploadEntry' %}">UPLOAD</a><br>
+    </div>
+    
+    
+    <hr>
+    <h4>あいう</h4><br><br>
+    <h4>あいう</h4><br><br>
+    <h4>あいう</h4><br><br>
+    <h4>あいう</h4><br><br>
+    <h4>あいう</h4><br><br>
+    <h4>あいう</h4><br><br>
+    <h4>あいう</h4><br><br>
+    
+</div>
+    
+    
+
+{% endblock %}

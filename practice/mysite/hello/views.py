@@ -225,4 +225,15 @@ def users_insertUserEntry(request):
 def users_insertUserExecute(request):
     return render(request, 'usersApp/insertUserEntry.html')
 
+"""
+"""
+def vbs_menu(request):
+    return render(request, 'vbsApp/menu.html')
+
+def vbs_downloadEntry(request):
+    return render(request, 'vbsApp/download.html')
+
+def vbs_uploadEntry(request):
+    return render(request, 'vbsApp/menu.html')
+
 

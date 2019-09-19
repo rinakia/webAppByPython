@@ -1,0 +1,43 @@
+{% extends "../home_base.html" %}
+
+{% block body %}
+
+{% load static %}
+
+
+<div align="center">
+
+
+<table class="ICHIRAN" border="1">
+<tr>
+    <th nowrap class="ICHIRAN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th nowrap class="ICHIRAN">ファイル名</th>
+    <th nowrap class="ICHIRAN">データ対象日</th>
+    <th nowrap class="ICHIRAN">作成日時</th>
+    <th nowrap class="ICHIRAN">サイズ</th>
+</tr>
+<!-- ここから下は、触ってはいけません！！ ダイアログでなく通知バーするため、Dummy.pdx を指定する -------------> 
+<script type="text/javascript">
+
+
+var ffol = "./";          //自己診断用 IE11以上
+var fname = "sampleCSV1.csv";              //自己診断用 IE11以上
+var csvNAME = fname.substring(0,fname.length -4) + ".csv"
+
+document.write('<tr>');
+document.write('<td nowrap class="VALUE" align="center">');
+document.write('<input onclick="yamaDownload(' + "'" + ffol + fname + "','')" + '" type="button" name="_DOWNLOAD" value="Download" download="' + csvNAME + '"></td>');
+
+document.write('<td nowrap class="VALUE" align="center">' + csvNAME + '</td>');
+document.write('<td nowrap class="VALUE" align="center">2018/12/11</td>');
+document.write('<td nowrap class="VALUE" align="center">2018/12/12&nbsp;08:30:56</td>');
+document.write('<td nowrap class="VALUE" align="center">26M</td></tr>');
+
+
+</script>
+
+
+</table>
+
+</div>
+{% endblock %}
